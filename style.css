@@ -80,3 +80,10 @@ footer a {
     color: #add8e6;
     text-decoration: none;
 }
+#favorites {
+    margin-top: 20px;
+}
+
+.favorite-city {
+    margin: 5px 0;
+}
