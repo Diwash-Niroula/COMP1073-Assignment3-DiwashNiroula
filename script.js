@@ -87,4 +87,23 @@ const fetchWeatherData = (cityName) => {
       </div>`
     ).join('');
   };
+  const loadFavoriteCities = () => {
+    const savedCities = localStorage.getItem('favoriteCities');
+    if (savedCities) {
+      favoriteCities = JSON.parse(savedCities);
+    }
+    displayFavoriteCities();
+  };
+  
+  document.getElementById('fetchCityWeatherButton').addEventListener('click', () => {
+    const cityInput = document.getElementById('cityInput').value;
+    if (cityInput) {
+      fetchWeatherData(cityInput);
+    } else {
+      alert("Please enter a city name.");
+    }
+  });
+  
+  // Initial load of favorite cities
+  loadFavoriteCities();
   
