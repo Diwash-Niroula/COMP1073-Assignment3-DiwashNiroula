@@ -43,4 +43,21 @@ const fetchWeatherData = (cityName) => {
     document.getElementById('refreshButton').addEventListener('click', () => fetchWeatherData(data.name));
     document.getElementById('saveFavoriteButton').addEventListener('click', () => saveFavoriteCity(data.name));
   };
+  const fetchUnsplashImage = (locationName) => {
+    fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(locationName)}+landscape&client_id=${unsplashAccessKey}&per_page=1`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.results.length > 0) {
+          displayUnsplashImage(data.results[0].urls.regular);
+        } else {
+          displayUnsplashImage('https://via.placeholder.com/400?text=No+Image+Available'); // Placeholder if no image found
+        }
+      })
+      .catch(error => console.error('Error fetching Unsplash image:', error));
+  };
+  
+  const displayUnsplashImage = (imageUrl) => {
+    const imageContainer = document.getElementById('imageContainer');
+    imageContainer.innerHTML = `<img src="${imageUrl}" alt="Location Image" class="weather-image" />`;
+  };
   
