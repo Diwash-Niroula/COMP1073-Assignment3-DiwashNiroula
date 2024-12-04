@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather & Image App</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Weather & Image App</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button id="fetchCityWeatherButton">Get Weather</button>
+    <div id="weather" class="weather-card"></div>
+    <div id="favorites"></div>
+  </div>
+  <footer>
+    <p>Data provided by <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap API</a> and <a href="https://unsplash.com/developers" target="_blank">Unsplash API</a>.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
