@@ -25,3 +25,17 @@ input[type="text"] {
     width: calc(100% - 30px);
     margin: 20px 5px;
 }
+button {
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #1e3c72, #1a2948);
+}
