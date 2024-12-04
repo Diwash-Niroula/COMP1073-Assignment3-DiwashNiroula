@@ -39,3 +39,26 @@ button {
 button:hover {
     background: linear-gradient(135deg, #1e3c72, #1a2948);
 }
+.weather-card {
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    color: #f0f0f0;
+}
+
+.weather-card h2 {
+    font-size: 1.8rem;
+    color: #add8e6;
+    margin: 0 0 15px;
+}
+
+.weather-card p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
