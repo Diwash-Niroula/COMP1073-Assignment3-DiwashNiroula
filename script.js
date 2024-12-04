@@ -64,4 +64,27 @@ const fetchWeatherData = (cityName) => {
     console.error('Error:', error);
     weatherDiv.innerHTML = `<p style="color: red;">Error fetching data: ${error.message}</p>`;
   };
+  const saveFavoriteCity = (cityName) => {
+    if (!favoriteCities.includes(cityName)) {
+      favoriteCities.push(cityName);
+      localStorage.setItem('favoriteCities', JSON.stringify(favoriteCities));
+      displayFavoriteCities();
+    }
+  };
+  
+  const removeFavoriteCity = (cityName) => {
+    favoriteCities = favoriteCities.filter(city => city !== cityName);
+    localStorage.setItem('favoriteCities', JSON.stringify(favoriteCities));
+    displayFavoriteCities();
+  };
+  
+  const displayFavoriteCities = () => {
+    const favoritesDiv = document.getElementById('favorites');
+    favoritesDiv.innerHTML = favoriteCities.map(city => 
+      `<div class="favorite-city">
+        <button onclick="fetchWeatherData('${city}')">${city}</button>
+        <button onclick="removeFavoriteCity('${city}')">Remove</button>
+      </div>`
+    ).join('');
+  };
   
