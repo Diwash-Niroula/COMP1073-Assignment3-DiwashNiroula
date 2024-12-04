@@ -60,4 +60,8 @@ const fetchWeatherData = (cityName) => {
     const imageContainer = document.getElementById('imageContainer');
     imageContainer.innerHTML = `<img src="${imageUrl}" alt="Location Image" class="weather-image" />`;
   };
+  const handleError = (error) => {
+    console.error('Error:', error);
+    weatherDiv.innerHTML = `<p style="color: red;">Error fetching data: ${error.message}</p>`;
+  };
   
